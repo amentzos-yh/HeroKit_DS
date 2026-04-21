@@ -1,4 +1,4 @@
-# HeroKit — Styleguide
+# HeroKit_Styleguide
 
 > **Version:** 1.0
 > **Last updated:** 20 April 2026
