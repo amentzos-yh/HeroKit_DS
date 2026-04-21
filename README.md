@@ -1,2 +1,2 @@
-# HeroKit Docs
+# HeroKit Design System Docs
    Design system documentation.
