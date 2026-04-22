@@ -144,7 +144,31 @@ Text buttons have no background or border — colour change only.
 
 ---
 
-### 2.5 Sizes
+### 2.5 States — Dark mode (Primary only)
+
+Dark mode inverts the colour logic — white/light backgrounds with blue text.
+
+#### Pill Primary (Dark)
+
+| State | Background | Text | Notes |
+|-------|-----------|------|-------|
+| `Default` | `#FFFFFF` | `#004BE0` | White bg, Blue 60 text |
+| `Hovered` | `#E5F2FF` | `#042CC8` | Blue 10 bg, Blue 70 text |
+| `Pressed` | `#CFE6FF` | `#042CC8` | Blue 20 bg, Blue 70 text |
+
+#### Icon Primary (Dark)
+
+| State | Background | Notes |
+|-------|-----------|-------|
+| `Default` | `#FFFFFF` | White |
+| `Hovered` | `#E5F2FF` | Blue 10 |
+| `Pressed` | `#CFE6FF` | Blue 20 |
+
+> Sizes (Small / Medium / Large) follow the same padding and font size rules as Light mode — only colours differ.
+
+---
+
+### 2.6 Sizes
 
 | Size | Font size | Padding (V / H) | Corner radius |
 |------|-----------|-----------------|---------------|
@@ -158,13 +182,13 @@ Text buttons have no background or border — colour change only.
 
 ---
 
-### 2.6 Typography
+### 2.7 Typography
 
-All button labels use `IBM Plex Sans, Regular (400)`. Size varies by the `Size` property — see 2.5 above.
+All button labels use `IBM Plex Sans, Regular (400)`. Size varies by the `Size` property — see 2.6 above.
 
 ---
 
-### 2.7 Figma
+### 2.8 Figma
 
 | Resource | Node |
 |----------|------|
