@@ -1,25 +1,105 @@
 # HeroKit — Components
 
-> **Version:** 1.0
-> **Last updated:** 20 April 2026
+> **Version:** 1.1
+> **Last updated:** 25 April 2026
 
 ---
 
 ## Table of Contents
 
-1. [Breadcrumb](#1-breadcrumb)
-2. [Button](#2-button)
-3. [Checkbox](#3-checkbox)
+1. [Alert](#1-alert)
+2. [Breadcrumb](#2-breadcrumb)
+3. [Button](#3-button)
+4. [Checkbox](#4-checkbox)
 
 ---
 
-## 1. Breadcrumb
+## 1. Alert
+
+An inline notification that communicates status, feedback, or required attention within the flow of a page. Used for non-blocking messages such as confirmations, warnings, and errors related to the user's current task.
+
+---
+
+### 1.1 Properties
+
+| Property | Values |
+|----------|--------|
+| `Breakpoint` | `Mobile` · `Desktop` |
+| `Kind` | `Info` · `Success` · `Warning` · `Alert` |
+| `CTA` | `On` · `Off` |
+| `Text` | (string) |
+| `CTA Text` | (string) |
+
+Total variants: **8** (4 kinds × 2 breakpoints)
+
+---
+
+### 1.2 Anatomy
+
+Each Alert variant is composed of:
+- A container with a 1px border and tinted background
+- An icon (16px) — colour matches the kind
+- A message — body copy in neutral colour
+- A CTA *(optional)* — text link in Blue/50
+
+---
+
+### 1.3 Kind → Tokens
+
+| Kind | Icon | Background | Border |
+|------|------|------------|--------|
+| `Info` | `Icon/Info Circle` | `Blue/10` `#E5F2FF` | `Blue/40` `#4297FF` |
+| `Success` | `Icon/Circle Check Solid` | `Green/10` `#E6F4F1` | `Green/30` `#1FC198` |
+| `Warning` | `Icon/Exclamation Triangle` | `Orange/10` `#FEFBF5` | `Orange/50` `#EF9E00` |
+| `Alert` | `Icon/Exclamation Triangle` | `Coral/10` `#FEF8F8` | `Coral/40` `#F27874` |
+
+**Shared across all kinds**
+
+| Element | Token |
+|---------|-------|
+| Message | `body/14-regular`, `Saturated Shades/80` `#3A3D46` |
+| CTA | `body/14-semibold`, `Blue/50` `#006BFF` |
+| Border-radius | `--size-02` (4px) |
+
+> The CTA stays Blue/50 across all kinds — it does not inherit the kind's colour. This keeps the action consistent regardless of the alert's tone.
+
+---
+
+### 1.4 Breakpoint Specs
+
+| Spec | Mobile | Desktop |
+|------|--------|---------|
+| Padding | `--size-04` / `--size-05` (8px V / 12px H) | `--size-05` / `--size-06` (12px V / 16px H) |
+| Layout | Stacked — text and CTA on separate lines | Inline — text and CTA on the same row |
+| Gap (icon ↔ content) | `--size-04` (8px) | `--size-04` (8px) |
+| Gap (text ↔ CTA) | `--size-02` (4px, vertical) | `--size-04` (8px, horizontal) |
+| Icon alignment | Top of first text line | Vertically centred |
+
+---
+
+### 1.5 Usage
+
+1. **Width** — In the design system file, variants are drawn at fixed widths (328px mobile, 690px desktop) for documentation. **In product use, set the Alert to fill its container.**
+2. **Warning vs Alert** — A new version distinguishing these two kinds is in progress. Until it ships, treat them as visually distinct but functionally equivalent.
+3. **Dismissible variant** — Not currently available. A future version may add a close affordance.
+
+---
+
+### 1.6 Figma
+
+| Resource | Node |
+|----------|------|
+| Component set | `Alert` — node `863:23836` |
+
+---
+
+## 2. Breadcrumb
 
 A navigation aid that shows the user's current location within the page hierarchy. Helps users understand where they are and navigate back to parent pages.
 
 ---
 
-### 1.1 Component Set: `Breadcrumb`
+### 2.1 Component Set: `Breadcrumb`
 
 The `Breadcrumb` component composes up to 4 `Breadcrumb Link` instances separated by a `/` divider.
 
@@ -33,7 +113,7 @@ The `Breadcrumb` component composes up to 4 `Breadcrumb Link` instances separate
 
 ---
 
-### 1.2 Sub-component: `Breadcrumb Link`
+### 2.2 Sub-component: `Breadcrumb Link`
 
 The interactive element within a breadcrumb trail. Each link has its own state.
 
@@ -56,7 +136,7 @@ The interactive element within a breadcrumb trail. Each link has its own state.
 
 ---
 
-### 1.3 Anatomy
+### 2.3 Anatomy
 
 ```
 [Link label] / [Link label] / [Link label] / [Link label]
@@ -68,7 +148,7 @@ The interactive element within a breadcrumb trail. Each link has its own state.
 
 ---
 
-### 1.4 Figma
+### 2.4 Figma
 
 | Resource | Link |
 |----------|------|
@@ -77,13 +157,13 @@ The interactive element within a breadcrumb trail. Each link has its own state.
 
 ---
 
-## 2. Button
+## 3. Button
 
 The primary interactive element for triggering actions. Available in three types, two hierarchies, three sizes, and two modes (light/dark).
 
 ---
 
-### 2.1 Properties
+### 3.1 Properties
 
 | Property | Values |
 |----------|--------|
@@ -98,7 +178,7 @@ Total variants: **210**
 
 ---
 
-### 2.2 Types
+### 3.2 Types
 
 **Pill** — the standard button. Rounded, filled or outlined, used for primary actions across the product.
 
@@ -108,7 +188,7 @@ Total variants: **210**
 
 ---
 
-### 2.3 States — Pill (Light mode)
+### 3.3 States — Pill (Light mode)
 
 #### Primary
 
@@ -130,7 +210,7 @@ Total variants: **210**
 
 ---
 
-### 2.4 States — Text (Light mode, Primary)
+### 3.4 States — Text (Light mode, Primary)
 
 Text buttons have no background or border — colour change only.
 
@@ -144,7 +224,7 @@ Text buttons have no background or border — colour change only.
 
 ---
 
-### 2.5 States — Dark mode (Primary only)
+### 3.5 States — Dark mode (Primary only)
 
 Dark mode inverts the colour logic — white/light backgrounds with blue text.
 
@@ -168,7 +248,7 @@ Dark mode inverts the colour logic — white/light backgrounds with blue text.
 
 ---
 
-### 2.6 Sizes
+### 3.6 Sizes
 
 | Size | Font size | Padding (V / H) | Corner radius |
 |------|-----------|-----------------|---------------|
@@ -182,13 +262,13 @@ Dark mode inverts the colour logic — white/light backgrounds with blue text.
 
 ---
 
-### 2.7 Typography
+### 3.7 Typography
 
-All button labels use `IBM Plex Sans, Regular (400)`. Size varies by the `Size` property — see 2.6 above.
+All button labels use `IBM Plex Sans, Regular (400)`. Size varies by the `Size` property — see 3.6 above.
 
 ---
 
-### 2.8 Figma
+### 3.8 Figma
 
 | Resource | Node |
 |----------|------|
@@ -196,13 +276,13 @@ All button labels use `IBM Plex Sans, Regular (400)`. Size varies by the `Size` 
 
 ---
 
-## 3. Checkbox
+## 4. Checkbox
 
 A form control that allows users to select one or multiple options from a set.
 
 ---
 
-### 3.1 Properties
+### 4.1 Properties
 
 | Property | Values |
 |----------|--------|
@@ -213,7 +293,7 @@ Total variants: **16**
 
 ---
 
-### 3.2 Anatomy
+### 4.2 Anatomy
 
 Each checkbox variant is composed of:
 - A square control box with a border and optional fill
@@ -223,7 +303,7 @@ Each checkbox variant is composed of:
 
 ---
 
-### 3.3 States
+### 4.3 States
 
 | State | Box background | Box border | Label colour | Checkmark | Notes |
 |-------|---------------|------------|--------------|-----------|-------|
@@ -238,7 +318,7 @@ Each checkbox variant is composed of:
 
 ---
 
-### 3.4 Sizes
+### 4.4 Sizes
 
 | Size | Control box | Component height |
 |------|------------|-----------------|
@@ -249,13 +329,13 @@ Corner radius on control box: **2px**
 
 ---
 
-### 3.5 Typography
+### 4.5 Typography
 
 Labels use `body/14-regular` at Medium size and `body/16-regular` at Large size — IBM Plex Sans, Regular (400).
 
 ---
 
-### 3.6 Figma
+### 4.6 Figma
 
 | Resource | Node |
 |----------|------|
