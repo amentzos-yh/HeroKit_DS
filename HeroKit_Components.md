@@ -1,7 +1,7 @@
 # HeroKit — Components
 
-> **Version:** 1.1
-> **Last updated:** 25 April 2026
+> **Version:** 1.2
+> **Last updated:** 27 April 2026
 
 ---
 
@@ -33,11 +33,9 @@ An inline notification that communicates status, feedback, or required attention
 |----------|--------|
 | `Breakpoint` | `Mobile` · `Desktop` |
 | `Kind` | `Info` · `Success` · `Warning` · `Alert` |
-| `CTA` | `On` · `Off` |
-| `Text` | (string) |
-| `CTA Text` | (string) |
+| `Elevation` | `On` · `Off` |
 
-Total variants: **8** (4 kinds × 2 breakpoints)
+Total variants: **16** (4 kinds × 2 breakpoints × 2 elevation states)
 
 ---
 
@@ -45,58 +43,67 @@ Total variants: **8** (4 kinds × 2 breakpoints)
 
 Each Alert variant is composed of:
 - A container with a 1px border and tinted background
-- An icon (16px) — colour matches the kind
-- A message — body copy in neutral colour
-- A CTA *(optional)* — text link in Blue/50
+- An **Icon Container** — icon (16px), colour matches the kind
+- A **Content** area — title (`body/14-semibold`) and message (`body/14-regular`) in neutral colour
+- A **Close Container** — `Icon/Close Big` for dismissing the alert
+- An **Action** text link — `body/14-regular`, Blue 50 `#006BFF`
 
 ---
 
 ### 1.3 Kind → Tokens
 
-| Kind | Icon | Background | Border |
-|------|------|------------|--------|
-| `Info` | `Icon/Info Circle` | `Blue/10` `#E5F2FF` | `Blue/40` `#4297FF` |
-| `Success` | `Icon/Circle Check Solid` | `Green/10` `#E6F4F1` | `Green/30` `#1FC198` |
-| `Warning` | `Icon/Exclamation Triangle` | `Orange/10` `#FEFBF5` | `Orange/50` `#EF9E00` |
-| `Alert` | `Icon/Exclamation Triangle` | `Coral/10` `#FEF8F8` | `Coral/40` `#F27874` |
+| Kind | Icon colour | Background | Border |
+|------|------------|------------|--------|
+| `Info` | `Blue/40` `#4297FF` | `Blue/10` `#E5F2FF` | `Blue/40` `#4297FF` |
+| `Success` | `Green/30` `#1FC198` | `Green/10` `#E6F4F1` | `Green/30` `#1FC198` |
+| `Warning` | `Orange/50` `#EF9E00` | `Orange/10` `#FEFBF5` | `Orange/50` `#EF9E00` |
+| `Alert` | `Coral/50` `#E65651` | `Coral/10` `#FEF8F8` | `Coral/50` `#E65651` |
 
 **Shared across all kinds**
 
 | Element | Token |
 |---------|-------|
-| Message | `body/14-regular`, `Saturated Shades/80` `#3A3D46` |
-| CTA | `body/14-semibold`, `Blue/50` `#006BFF` |
+| Title | `body/14-semibold`, Neutral 90 `#232429` |
+| Message | `body/14-regular`, Neutral 80 `#3A3D46` |
+| Action | `body/14-regular`, Neutral 80 `#3A3D46` |
+| Close icon | Neutral 80 `#3A3D46` |
 | Border-radius | `--size-02` (4px) |
-
-> The CTA stays Blue/50 across all kinds — it does not inherit the kind's colour. This keeps the action consistent regardless of the alert's tone.
 
 ---
 
-### 1.4 Breakpoint Specs
+### 1.4 Elevation
+
+| Value | Effect |
+|-------|--------|
+| `Off` | No shadow — flat appearance |
+| `On` | Drop shadow applied — use when the alert overlaps content |
+
+---
+
+### 1.5 Breakpoint Specs
 
 | Spec | Mobile | Desktop |
 |------|--------|---------|
 | Padding | `--size-04` / `--size-05` (8px V / 12px H) | `--size-05` / `--size-06` (12px V / 16px H) |
-| Layout | Stacked — text and CTA on separate lines | Inline — text and CTA on the same row |
+| Layout | Stacked — text and action on separate lines | Inline — text and action on the same row |
 | Gap (icon ↔ content) | `--size-04` (8px) | `--size-04` (8px) |
-| Gap (text ↔ CTA) | `--size-02` (4px, vertical) | `--size-04` (8px, horizontal) |
 | Icon alignment | Top of first text line | Vertically centred |
 
 ---
 
-### 1.5 Usage
+### 1.6 Usage
 
 1. **Width** — In the design system file, variants are drawn at fixed widths (328px mobile, 690px desktop) for documentation. **In product use, set the Alert to fill its container.**
-2. **Warning vs Alert** — A new version distinguishing these two kinds is in progress. Until it ships, treat them as visually distinct but functionally equivalent.
-3. **Dismissible variant** — Not currently available. A future version may add a close affordance.
+2. **Elevation** — Use `Elevation=On` when the alert floats above page content. Use `Elevation=Off` for inline alerts within the page flow.
+3. **Dismissible** — All variants include a `Close Container`. Show or hide it depending on whether the alert should be dismissible.
 
 ---
 
-### 1.6 Figma
+### 1.7 Figma
 
 | Resource | Node |
 |----------|------|
-| Component set | `Alert` — node `863:23836` |
+| Component set | `Alert Notice` — node `863:23836` |
 
 ---
 
