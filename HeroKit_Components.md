@@ -181,7 +181,7 @@ A navigation aid that shows the user's current location within the page hierarch
 
 ---
 
-### 12.1 Component Set: `Breadcrumb`
+### 3.1 Component Set: `Breadcrumb`
 
 The `Breadcrumb` component composes up to 4 `Breadcrumb Link` instances separated by a `/` divider.
 
@@ -195,7 +195,7 @@ The `Breadcrumb` component composes up to 4 `Breadcrumb Link` instances separate
 
 ---
 
-### 12.2 Sub-component: `Breadcrumb Link`
+### 3.2 Sub-component: `Breadcrumb Link`
 
 The interactive element within a breadcrumb trail. Each link has its own state.
 
@@ -218,7 +218,7 @@ The interactive element within a breadcrumb trail. Each link has its own state.
 
 ---
 
-### 12.3 Anatomy
+### 3.3 Anatomy
 
 ```
 [Link label] / [Link label] / [Link label] / [Link label]
@@ -230,7 +230,7 @@ The interactive element within a breadcrumb trail. Each link has its own state.
 
 ---
 
-### 12.4 Figma
+### 3.4 Figma
 
 | Resource | Link |
 |----------|------|
@@ -245,7 +245,7 @@ The primary interactive element for triggering actions. Available in three types
 
 ---
 
-### 12.1 Properties
+### 4.1 Properties
 
 | Property | Values |
 |----------|--------|
@@ -260,7 +260,7 @@ Total variants: **210**
 
 ---
 
-### 12.2 Types
+### 4.2 Types
 
 **Pill** — the standard button. Rounded, filled or outlined, used for primary actions across the product.
 
@@ -270,7 +270,7 @@ Total variants: **210**
 
 ---
 
-### 12.3 States — Pill (Light mode)
+### 4.3 States — Pill (Light mode)
 
 #### Primary
 
@@ -292,7 +292,7 @@ Total variants: **210**
 
 ---
 
-### 12.4 States — Text (Light mode, Primary)
+### 4.4 States — Text (Light mode, Primary)
 
 Text buttons have no background or border — colour change only.
 
@@ -306,7 +306,7 @@ Text buttons have no background or border — colour change only.
 
 ---
 
-### 12.5 States — Dark mode (Primary only)
+### 4.5 States — Dark mode (Primary only)
 
 Dark mode inverts the colour logic — white/light backgrounds with blue text.
 
@@ -330,7 +330,7 @@ Dark mode inverts the colour logic — white/light backgrounds with blue text.
 
 ---
 
-### 12.6 Sizes
+### 4.6 Sizes
 
 | Size | Font size | Padding (V / H) | Corner radius |
 |------|-----------|-----------------|---------------|
@@ -344,13 +344,13 @@ Dark mode inverts the colour logic — white/light backgrounds with blue text.
 
 ---
 
-### 12.7 Typography
+### 4.7 Typography
 
 All button labels use `IBM Plex Sans, Regular (400)`. Size varies by the `Size` property — see 3.6 above.
 
 ---
 
-### 12.8 Figma
+### 4.8 Figma
 
 | Resource | Node |
 |----------|------|
@@ -364,7 +364,7 @@ A pair of toggle-style button components used to present a set of mutually exclu
 
 ---
 
-### 12.1 Sub-components
+### 5.1 Sub-components
 
 | Component | Node | Description |
 |-----------|------|-------------|
@@ -373,25 +373,26 @@ A pair of toggle-style button components used to present a set of mutually exclu
 
 ---
 
-### 12.2 Button Group _ Vertical
+### 5.2 Button Group _ Vertical
 
 **Properties:**
 
 | Property | Values |
 |----------|--------|
 | `Size` | `Small` · `Large` |
-| `State` | `Default` · `Hover` · `Pressed` · `Selected` |
+| `State` | `Default` · `Hover` · `Pressed` · `Selected` · `Disabled` |
 
-Total variants: **8**
+Total variants: **10**
 
 **States:**
 
 | State | Background | Border | Text / Icon | Notes |
 |-------|-----------|--------|------------|-------|
-| `Default` | None | `#B2BBC7` | `#232323` | Neutral 40 border |
+| `Default` | None | `#B2BBC7` | `#3A3D46` | Neutral 40 border, Neutral 80 label |
 | `Hover` | Blue 50 @5% | `#004BE0` | `#004BE0` | Blue 60 |
 | `Pressed` | Blue 50 @10% | `#042CC8` | `#042CC8` | Blue 70 |
 | `Selected` | `#006BFF` | — | `#FFFFFF` | Blue 50 fill, white content |
+| `Disabled` | `#FFFFFF` | — | Icon `#D5DBE2` · Label `#929CAB` | Neutral 30 icon, Neutral 50 label |
 
 **Sizes:**
 
@@ -404,24 +405,25 @@ Corner radius: **999px** (full pill)
 
 ---
 
-### 12.3 Button Group _ Horizontal
+### 5.3 Button Group _ Horizontal
 
 **Properties:**
 
 | Property | Values |
 |----------|--------|
-| `State` | `Default` · `Hover` · `Pressed` · `Selected` |
+| `State` | `Default` · `Hover` · `Pressed` · `Selected` · `Disabled` |
 
-Total variants: **4**
+Total variants: **5**
 
 **States:**
 
 | State | Icon Container bg | Icon Container border | Icon | Label | Notes |
 |-------|------------------|----------------------|------|-------|-------|
-| `Default` | `#FFFFFF` | `#B2BBC7` | `#006BFF` | `#232323` | Neutral 40 border |
+| `Default` | `#FFFFFF` | `#B2BBC7` | `#006BFF` | `#3A3D46` | Neutral 40 border, Neutral 80 label |
 | `Hover` | `#FFFFFF` + Blue 50 @5% | `#004BE0` | `#004BE0` | `#004BE0` | Blue 60 |
 | `Pressed` | `#FFFFFF` + Blue 50 @10% | `#042CC8` | `#042CC8` | `#004BE0` | Blue 70 |
 | `Selected` | `#006BFF` | — | `#FFFFFF` | `#004BE0` | Blue 50 fill, white icon |
+| `Disabled` | `#FFFFFF` | `#E3E8ED` | `#E3E8ED` | `#929CAB` | Neutral 20 border + icon, Neutral 50 label |
 
 **Dimensions:**
 
@@ -435,7 +437,7 @@ Total variants: **4**
 
 ---
 
-### 12.4 Layout — Good Practices
+### 5.4 Layout — Good Practices
 
 **Vertical (Tab bar)**
 
@@ -461,7 +463,7 @@ Total variants: **4**
 
 ---
 
-### 12.5 Figma
+### 5.5 Figma
 
 | Resource | Node |
 |----------|------|
@@ -476,7 +478,7 @@ A form control that allows users to select one or multiple options from a set.
 
 ---
 
-### 12.1 Properties
+### 6.1 Properties
 
 | Property | Values |
 |----------|--------|
@@ -487,7 +489,7 @@ Total variants: **16**
 
 ---
 
-### 12.2 Anatomy
+### 6.2 Anatomy
 
 Each checkbox variant is composed of:
 - A square control box with a border and optional fill
@@ -497,11 +499,11 @@ Each checkbox variant is composed of:
 
 ---
 
-### 12.3 States
+### 6.3 States
 
 | State | Box background | Box border | Label colour | Checkmark | Notes |
 |-------|---------------|------------|--------------|-----------|-------|
-| `Default` | `#FFFFFF` | `#B2BBC7` | `#232323` | — | Neutral 40 border |
+| `Default` | `#FFFFFF` | `#B2BBC7` | `#3A3D46` | — | Neutral 40 border, Neutral 80 label |
 | `Hover` | `#FFFFFF` + Blue 50 @5% | `#004BE0` | `#004BE0` | — | Blue 60 |
 | `Pressed` | `#FFFFFF` + Blue 50 @10% | `#042CC8` | `#042CC8` | — | Blue 70 |
 | `Focused Unselected` | `#FFFFFF` + Blue 50 @5% | `#004BE0` | `#004BE0` | — | + `#006BFF` focus ring |
@@ -512,7 +514,7 @@ Each checkbox variant is composed of:
 
 ---
 
-### 12.4 Sizes
+### 6.4 Sizes
 
 | Size | Control box | Component height |
 |------|------------|-----------------|
@@ -523,13 +525,13 @@ Corner radius on control box: **2px**
 
 ---
 
-### 12.5 Typography
+### 6.5 Typography
 
 Labels use `body/14-regular` at Medium size and `body/16-regular` at Large size — IBM Plex Sans, Regular (400).
 
 ---
 
-### 12.6 Figma
+### 6.6 Figma
 
 | Resource | Node |
 |----------|------|
@@ -543,7 +545,7 @@ A stepper input that lets users increment or decrement a numeric value using `+`
 
 ---
 
-### 12.1 Properties
+### 7.1 Properties
 
 | Property | Values |
 |----------|--------|
@@ -553,7 +555,7 @@ Total variants: **5**
 
 ---
 
-### 12.2 Anatomy
+### 7.2 Anatomy
 
 Each Counter variant is composed of three sections in a horizontal row:
 - **Minus** — decrement button with `Icon/Remove Big`
@@ -562,7 +564,7 @@ Each Counter variant is composed of three sections in a horizontal row:
 
 ---
 
-### 12.3 States
+### 7.3 States
 
 | State | Minus bg | Minus border | Minus icon | Plus bg | Plus border | Plus icon | Number | Notes |
 |-------|---------|-------------|-----------|--------|------------|----------|--------|-------|
@@ -574,7 +576,7 @@ Each Counter variant is composed of three sections in a horizontal row:
 
 ---
 
-### 12.4 Usage Notes
+### 7.4 Usage Notes
 
 1. Use when the selectable range is up to 10–15 items. For larger numbers use quick-action inputs instead.
 2. The user cannot type a number directly — increment/decrement only.
@@ -582,13 +584,13 @@ Each Counter variant is composed of three sections in a horizontal row:
 
 ---
 
-### 12.5 Typography
+### 7.5 Typography
 
 Number display uses `body/18-semibold` — IBM Plex Sans, SemiBold (600), 18px.
 
 ---
 
-### 12.6 Dimensions
+### 7.6 Dimensions
 
 | Property | Value |
 |----------|-------|
@@ -597,14 +599,14 @@ Number display uses `body/18-semibold` — IBM Plex Sans, SemiBold (600), 18px.
 
 ---
 
-### 12.7 Layout
+### 7.7 Layout
 
 - **Gap between label and counter:** `--size-07` (24px)
 - **Gap between counter rows:** `--size-06` (16px)
 
 ---
 
-### 12.8 Figma
+### 7.8 Figma
 
 | Resource | Node |
 |----------|------|
@@ -618,7 +620,7 @@ A calendar UI that allows users to select a date. Composed of a `Date Picker _ D
 
 ---
 
-### 12.1 Sub-components
+### 8.1 Sub-components
 
 | Component | Node | Description |
 |-----------|------|-------------|
@@ -626,7 +628,7 @@ A calendar UI that allows users to select a date. Composed of a `Date Picker _ D
 
 ---
 
-### 12.2 Date Picker _ Day
+### 8.2 Date Picker _ Day
 
 **Properties:**
 
@@ -651,7 +653,7 @@ Dimensions: **40×40px** · Typography: `body/16-regular`
 
 ---
 
-### 12.3 Parent: `Date Picker`
+### 8.3 Parent: `Date Picker`
 
 One variant (`Kind=Default`). Composed of three sections:
 
@@ -665,7 +667,7 @@ Overall dimensions: **312×366px**
 
 ---
 
-### 12.4 Figma
+### 8.4 Figma
 
 | Resource | Node |
 |----------|------|
@@ -680,7 +682,7 @@ A navigation control that allows users to move through a multi-page dataset. Com
 
 ---
 
-### 12.1 Sub-components
+### 9.1 Sub-components
 
 | Component | Node | Description |
 |-----------|------|-------------|
@@ -690,7 +692,7 @@ A navigation control that allows users to move through a multi-page dataset. Com
 
 ---
 
-### 12.2 Pagination _ Page Number
+### 9.2 Pagination _ Page Number
 
 | Property | Values |
 |----------|--------|
@@ -706,7 +708,7 @@ Dimensions: **40×40px**
 
 ---
 
-### 12.3 Pagination _ PrevNext
+### 9.3 Pagination _ PrevNext
 
 | Property | Values |
 |----------|--------|
@@ -723,7 +725,7 @@ Dimensions: **40×40px**
 
 ---
 
-### 12.4 Pagination _ Ellipsis
+### 9.4 Pagination _ Ellipsis
 
 | State | Background | Text | Notes |
 |-------|-----------|------|-------|
@@ -733,7 +735,7 @@ Dimensions: **40×40px**
 
 ---
 
-### 12.5 Parent: `Pagination`
+### 9.5 Parent: `Pagination`
 
 The parent component assembles sub-components into a full pagination strip. Five layout variants are available:
 
@@ -747,7 +749,7 @@ The parent component assembles sub-components into a full pagination strip. Five
 
 ---
 
-### 12.6 Figma
+### 9.6 Figma
 
 | Resource | Node |
 |----------|------|
@@ -764,7 +766,7 @@ A form control that allows users to select a single option from a set of mutuall
 
 ---
 
-### 12.1 Properties
+### 10.1 Properties
 
 | Property | Values |
 |----------|--------|
@@ -774,7 +776,7 @@ Total variants: **8**
 
 ---
 
-### 12.2 Anatomy
+### 10.2 Anatomy
 
 Each Radio Button variant is composed of:
 - A circular control with a border and optional fill
@@ -784,11 +786,11 @@ Each Radio Button variant is composed of:
 
 ---
 
-### 12.3 States
+### 10.3 States
 
 | State | Control background | Border | Label colour | Inner dot | Notes |
 |-------|-------------------|--------|--------------|-----------|-------|
-| `Default` | `#FFFFFF` | `#929CAB` | `#232323` | — | Neutral 50 border |
+| `Default` | `#FFFFFF` | `#929CAB` | `#3A3D46` | — | Neutral 50 border, Neutral 80 label |
 | `Hover` | `#FFFFFF` + Blue 50 @5% | `#004BE0` | `#004BE0` | — | Blue 60 |
 | `Pressed` | `#FFFFFF` + Blue 50 @10% | `#042CC8` | `#042CC8` | — | Blue 70 |
 | `Focused Unselected` | `#FFFFFF` + Blue 50 @5% | `#004BE0` | `#004BE0` | — | + `#006BFF` focus ring |
@@ -799,20 +801,20 @@ Each Radio Button variant is composed of:
 
 ---
 
-### 12.4 Typography
+### 10.4 Typography
 
 Labels use `body/16-regular` — IBM Plex Sans, Regular (400), 16px.
 
 ---
 
-### 12.5 Layout
+### 10.5 Layout
 
 - **Gap between radio buttons:** `--size-06` (16px)
 - **Gap between group title and first radio button:** `--size-07` (24px)
 
 ---
 
-### 12.6 Figma
+### 10.6 Figma
 
 | Resource | Node |
 |----------|------|
@@ -891,7 +893,7 @@ A horizontal navigation control that switches between content sections within th
 
 ---
 
-### 12.1 Properties
+### 11.1 Properties
 
 | Property | Values |
 |----------|--------|
@@ -901,7 +903,7 @@ Total variants: **5**
 
 ---
 
-### 12.2 Anatomy
+### 11.2 Anatomy
 
 Each Tab item is composed of:
 - A **Label** — text that changes colour per state
@@ -911,7 +913,7 @@ Tabs are assembled side by side in a **Tab Bar** with no gap between items — s
 
 ---
 
-### 12.3 States
+### 11.3 States
 
 | State | Label colour | Notes |
 |-------|-------------|-------|
@@ -923,7 +925,7 @@ Tabs are assembled side by side in a **Tab Bar** with no gap between items — s
 
 ---
 
-### 12.4 Dimensions & Spacing
+### 11.4 Dimensions & Spacing
 
 | Property | Value |
 |----------|-------|
@@ -933,13 +935,13 @@ Tabs are assembled side by side in a **Tab Bar** with no gap between items — s
 
 ---
 
-### 12.5 Typography
+### 11.5 Typography
 
 Labels use `body/16-regular` — IBM Plex Sans, Regular (400), 16px.
 
 ---
 
-### 12.6 Figma
+### 11.6 Figma
 
 | Resource | Node |
 |----------|------|
@@ -955,10 +957,12 @@ A brief, non-blocking notification that surfaces at the bottom of the screen to 
 
 ### 13.1 Properties
 
-| Property | Values |
-|----------|--------|
-| `Kind` | `Info` · `Success` · `Warning` · `Alert` |
-| `Lines` | `One` · `Multiple` |
+| Property | Type | Values / Default |
+|----------|------|-----------------|
+| `Kind` | Variant | `Info` · `Success` · `Warning` · `Alert` |
+| `Lines` | Variant | `One` · `Multiple` |
+| `CTA` | Boolean | `true` · `false` |
+| `CTA Label` | Text | `Action` |
 
 Total variants: **8** (4 kinds × 2 line variants)
 
@@ -1002,11 +1006,21 @@ Each Snackbar variant is composed of:
 | Variant | Height | Icon placement |
 |---------|--------|----------------|
 | `One` | 52px | Direct child of Container, vertically centred |
-| `Multiple` | 92px | Wrapped in Icon Container frame, top-aligned |
+| `Multiple` | 128px | Wrapped in Icon Container frame, top-aligned |
 
 ---
 
-### 13.5 Dimensions & Spacing
+### 13.5 Variations
+
+| Variation | Description |
+|-----------|-------------|
+| `Text only` | Message only, no CTA |
+| `With CTA in one line` | Message and action link on a single line |
+| `With CTA in multiple lines` | Title, message, and action link across multiple lines |
+
+---
+
+### 13.6 Dimensions & Spacing
 
 | Property | Value |
 |----------|-------|
@@ -1017,7 +1031,7 @@ Each Snackbar variant is composed of:
 
 ---
 
-### 13.6 Usage
+### 13.7 Usage
 
 1. **Position**
    - Mobile: bottom of screen, centred horizontally
@@ -1027,15 +1041,17 @@ Each Snackbar variant is composed of:
 
 3. **Non-blocking** — Snackbars appear without warning but do not prevent interaction with page content beneath them.
 
-4. **Auto-dismiss** — Snackbars without actions can auto-dismiss after 4–10 seconds, depending on platform.
+4. **Auto-dismiss** — Snackbars without actions can auto-dismiss after 7 seconds.
 
-5. **One vs Multiple lines** — use `Lines=One` for short confirmations (e.g. "Booking confirmed"). Use `Lines=Multiple` when the message needs a title + supporting text.
+5. **One at a time** — Only one snackbar may be displayed at a time. If a new one is triggered while another is visible, the current one is replaced immediately.
 
-6. **Not a substitute for Alert** — Snackbars are transient and non-blocking. For persistent, inline, or page-level messaging, use Alert or Banner.
+6. **One vs Multiple lines** — use `Lines=One` for short confirmations (e.g. "Booking confirmed"). Use `Lines=Multiple` when the message needs a title + supporting text.
+
+7. **Not a substitute for Alert** — Snackbars are transient and non-blocking. For persistent, inline, or page-level messaging, use Alert or Banner.
 
 ---
 
-### 13.7 Figma
+### 13.8 Figma
 
 | Resource | Node |
 |----------|------|
