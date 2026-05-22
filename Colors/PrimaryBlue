@@ -1,0 +1,30 @@
+CURRENT
+
+// Blue
+$color-primary-blue: #006bff;
+$color-primary-blue-70: #4c97ff;
+$color-primary-blue-35: #a6cbff;
+$color-primary-blue-20: #e7f2ff;
+$color-primary-blue-10: #d2e5ff;
+$color-primary-blue-5: #f2f8ff;
+
+// ===========================
+// Second Blue
+$color-secondary-blue: #005CDB;
+$color-secondary-blue-5: #F5F9FF;
+
+
+NEW
+
+//BLue 
+$color-primary-blue-05: #F5FAFF;
+$color-primary-blue-10: #E5F2FF;
+$color-primary-blue-20: #CFE6FF;
+$color-primary-blue-30: #A6D0FF;
+$color-primary-blue-40: #4297FF;
+$color-primary-blue-50: #006BFF;
+$color-primary-blue-60: #004BE0;
+$color-primary-blue-70: #042CC8;
+$color-primary-blue-80: #060F93;
+$color-primary-blue-90: #01016F;
+$color-primary-blue-95: #030236;
