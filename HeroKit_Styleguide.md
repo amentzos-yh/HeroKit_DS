@@ -239,7 +239,6 @@ Weights:      400 (Regular) · 600 (SemiBold)
 |-------|--------|------|-------------|----------------|
 | `label/10-semibold` | SemiBold (600) | 10px | 160% | 2% |
 | `label/10-regular` | Regular (400) | 10px | 160% | 2% |
-| `label/9-regular` | Regular (400) | 9px | 160% | 3% |
 
 ---
 
