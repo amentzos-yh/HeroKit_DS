@@ -1,0 +1,32 @@
+CURRENT
+
+// White
+$color-pure-white: #fff;
+
+// Black
+$color-pure-black: #000000;
+$color-primary-black: #232323;
+$color-primary-black-70: #656565;
+$color-primary-black-35: #b2b2b2;
+$color-primary-black-20: #d9d9d9;
+$color-primary-black-15: #f4f4f4;
+$color-primary-black-12: #e5e5e5;
+$color-primary-black-10: #fafafa;
+
+
+NEW
+
+//Shades
+$color-shade-00: #FFFFFF;
+$color-shade-05: #F9FAFB;
+$color-shade-10: #F3F5F7;
+$color-shade-20: #E3E8ED;
+$color-shade-30: #D5DBE2;
+$color-shade-40: #B2BBC7;
+$color-shade-50: #929CAB;
+$color-shade-60: #717C8E;
+$color-shade-70: #515867;
+$color-shade-80: #3A3D46;
+$color-shade-90: #232429;
+$color-shade-95: #111113;
+$color-shade-100: #000000;
