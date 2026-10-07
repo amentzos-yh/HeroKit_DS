@@ -1,7 +1,7 @@
 # HeroKit — Components
  
 > **Version:** 1.4
-> **Last updated:** 06 October 2026
+> **Last updated:** 07 October 2026
  
 ---
  
@@ -296,116 +296,161 @@ The interactive element within a breadcrumb trail. Each link has its own state.
  
 ## 4. Button
  
-The primary interactive element for triggering actions. Available in three types, two hierarchies, three sizes, and two modes (light/dark).
+The primary interactive element for triggering actions. Available in three types, three hierarchies, three sizes, and two modes (light/dark).
  
 ---
  
 ### 4.1 Properties
  
-| Property | Values |
-|----------|--------|
-| `Mode` | `Light` · `Dark` |
-| `Type` | `Pill` · `Text` · `Icon` |
-| `Icon` | `Yes` · `No` · `N/A` (Icon type only) |
-| `Hierarchy` | `Primary` · `Secondary` |
-| `Size` | `Small` · `Medium` · `Large` |
-| `State` | `Default` · `Hovered` · `Pressed` · `Focused` · `Disabled` |
+| Property | Type | Values / Default |
+|----------|------|------------------|
+| `Mode` | Variant | `Light` · `Dark` |
+| `Type` | Variant | `Pill` · `Icon` · `Link` |
+| `Icon` | Variant | `Yes` · `No` (Pill) · `N/A` (Icon) · `Yes` (Link) |
+| `Hierarchy` | Variant | `Primary` · `Secondary` · `Tertiary` (Link: `Primary` only) |
+| `Size` | Variant | `Large` · `Medium` · `Small` |
+| `State` | Variant | `Default` · `Hover` · `Pressed` · `Disabled` · `Focused` |
+| `Text Label` | Text | `Button` |
+| `Left Icon` | Boolean | `true` — shows / hides the left icon |
+| `Right Icon` | Boolean | `true` — shows / hides the right icon (Pill only) |
  
-Total variants: **210**
+Total variants: **300** — Pill 180 · Icon 90 · Link 30
  
 ---
  
 ### 4.2 Types
  
-**Pill** — the standard button. Rounded, filled or outlined, used for primary actions across the product.
+**Pill** — the standard button. Rounded; Primary is filled, Secondary is outlined, Tertiary has no fill and no border. With `Icon=Yes` it shows `Icon/Download` left and right of the label, toggled by `Left Icon` / `Right Icon`.
  
-**Text** — a label-only button with no background. Used for inline or low-emphasis actions. Always accompanied by an icon.
+**Icon** — a circular icon-only button (`Icon/Download`). Same hierarchies as Pill.
  
-**Icon** — a circular icon-only button. Used for compact or toolbar contexts.
- 
----
- 
-### 4.3 States — Pill (Light mode)
- 
-#### Primary
- 
-| State | Background | Text | Border | Notes |
-|-------|-----------|------|--------|-------|
-| `Default` | `#006BFF` | `#FFFFFF` | — | Blue 50 |
-| `Hovered` | `#004BE0` | `#FFFFFF` | — | Blue 60 |
-| `Pressed` | `#042CC8` | `#FFFFFF` | — | Blue 70 |
-| `Focused` | `#006BFF` | `#FFFFFF` | `#006BFF` + inner white shadow (3px) | Focus ring via inner shadow |
-| `Disabled` | `#F3F5F7` | `#515867` | — | Neutral 10 bg, Neutral 70 text |
- 
-#### Secondary
- 
-| State | Background | Text | Border | Notes |
-|-------|-----------|------|--------|-------|
-| `Default` | `#FFFFFF` | `#006BFF` | `#006BFF` | Outlined |
-| `Hovered` | `#006BFF` at 5% | `#004BE0` | `#004BE0` | Subtle blue tint |
-| `Disabled` | — | `#515867` | `#B2BBC7` | No fill, muted border |
+**Link** — a label-only button with no background, preceded by `Icon/Circle Arrow Right Outline` (toggled by `Left Icon`). Primary hierarchy only.
  
 ---
  
-### 4.4 States — Text (Light mode, Primary)
+### 4.3 States — Light mode
  
-Text buttons have no background or border — colour change only.
+#### Pill & Icon — Primary
  
-| State | Text colour | Notes |
-|-------|------------|-------|
-| `Default` | `#006BFF` | Blue 50 |
-| `Hovered` | `#004BE0` | Blue 60 |
-| `Pressed` | `#042CC8` | Blue 70 |
-| `Focused` | `#006BFF` + `#006BFF` at 10% bg | Subtle fill behind label |
-| `Disabled` | `#929CAB` | Neutral 50 |
+| State | Background | Label / Icon | Border |
+|-------|-----------|--------------|--------|
+| `Default` | Blue 50 `#006BFF` | White `#FFFFFF` | — |
+| `Hover` | Blue 60 `#004BE0` | White | — |
+| `Pressed` | Blue 70 `#042CC8` | White | — |
+| `Focused` | Blue 50 `#006BFF` | White | 2px Blue 50 + 3px inner white shadow (focus ring) |
+| `Disabled` | Neutral 10 `#F3F5F7` | Neutral 70 `#515867` | — |
+ 
+#### Pill & Icon — Secondary
+ 
+| State | Background | Label / Icon | Border |
+|-------|-----------|--------------|--------|
+| `Default` | None | Blue 50 `#006BFF` | 1px Blue 50 |
+| `Hover` | Blue 50 @5% | Blue 60 `#004BE0` | 1px Blue 60 |
+| `Pressed` | Blue 50 @10% | Blue 70 `#042CC8` | 1px Blue 70 |
+| `Focused` | Blue 50 `#006BFF` | White | 2px Blue 50 + 3px inner white shadow |
+| `Disabled` | None | Neutral 70 `#515867` | 1px Neutral 40 `#B2BBC7` |
+ 
+#### Pill & Icon — Tertiary
+ 
+Same as Secondary with **no border**, except:
+ 
+| State | Label / Icon |
+|-------|--------------|
+| `Disabled` | Neutral 60 `#717C8E` |
+ 
+#### Link — Primary
+ 
+| State | Label / Icon | Background |
+|-------|--------------|------------|
+| `Default` | Blue 50 `#006BFF` | — |
+| `Hover` | Blue 60 `#004BE0` | — |
+| `Pressed` | Blue 70 `#042CC8` | — |
+| `Focused` | Blue 50 `#006BFF` | Blue 50 @10% |
+| `Disabled` | Neutral 50 `#929CAB` | — |
  
 ---
  
-### 4.5 States — Dark mode (Primary only)
+### 4.4 States — Dark mode
  
-Dark mode inverts the colour logic — white/light backgrounds with blue text.
+#### Pill & Icon — Primary
  
-#### Pill Primary (Dark)
+| State | Background | Label / Icon | Border |
+|-------|-----------|--------------|--------|
+| `Default` | White `#FFFFFF` | Blue 60 `#004BE0` | — |
+| `Hover` | Blue 10 `#E5F2FF` | Blue 70 `#042CC8` | — |
+| `Pressed` | Blue 20 `#CFE6FF` | Blue 70 `#042CC8` | — |
+| `Focused` | Blue 50 `#006BFF` | White | 2px Blue 50 + 3px inner white shadow |
+| `Disabled` | Neutral 20 `#E3E8ED` | Neutral 70 `#515867` | — |
  
-| State | Background | Text | Notes |
-|-------|-----------|------|-------|
-| `Default` | `#FFFFFF` | `#004BE0` | White bg, Blue 60 text |
-| `Hovered` | `#E5F2FF` | `#042CC8` | Blue 10 bg, Blue 70 text |
-| `Pressed` | `#CFE6FF` | `#042CC8` | Blue 20 bg, Blue 70 text |
+#### Pill & Icon — Secondary
  
-#### Icon Primary (Dark)
+| State | Background | Label / Icon | Border |
+|-------|-----------|--------------|--------|
+| `Default` | None | Blue 20 `#CFE6FF` | 1px Blue 20 |
+| `Hover` | `#E7F2FF` @10% | Blue 10 `#E5F2FF` | 1px Blue 10 |
+| `Pressed` | `#E7F2FF` @20% | Blue 10 `#E5F2FF` | 1px Blue 5 `#F5FAFF` |
+| `Focused` | Blue 50 `#006BFF` | White | 2px Blue 50 + 3px inner white shadow |
+| `Disabled` | None | Neutral 40 `#B2BBC7` | 1px Neutral 50 `#929CAB` |
  
-| State | Background | Notes |
-|-------|-----------|-------|
-| `Default` | `#FFFFFF` | White |
-| `Hovered` | `#E5F2FF` | Blue 10 |
-| `Pressed` | `#CFE6FF` | Blue 20 |
+#### Pill & Icon — Tertiary
  
-> Sizes (Small / Medium / Large) follow the same padding and font size rules as Light mode — only colours differ.
+Same as Secondary with **no border**.
+ 
+#### Link — Primary
+ 
+| State | Label / Icon | Background |
+|-------|--------------|------------|
+| `Default` | Blue 30 `#A6D0FF` | — |
+| `Hover` | Blue 20 `#CFE6FF` | — |
+| `Pressed` | White `#FFFFFF` | — |
+| `Focused` | Blue 30 `#A6D0FF` | `#E7F2FF` @20% |
+| `Disabled` | Neutral 40 `#B2BBC7` | — |
  
 ---
  
-### 4.6 Sizes
+### 4.5 Sizes
  
-| Size | Font size | Padding (V / H) | Corner radius |
-|------|-----------|-----------------|---------------|
-| `Small` | 12px | 4px / 12px | 48px |
-| `Medium` | 14px | 12px / 24px | 48px |
-| `Large` | 16px | 12px / 24px | 48px |
+**Pill**
+ 
+| Size | Height | Font size | Padding (V / H) | Corner radius |
+|------|--------|-----------|-----------------|---------------|
+| `Small` | 24px | 12px | 4px / 12px | 48px |
+| `Medium` | 34px | 14px | 12px / 16px | 48px |
+| `Large` | 48px | 16px | 12px / 24px | 48px |
  
 > Corner radius is set to 48px across all sizes — this produces the pill shape regardless of button height.
  
-**Icon button padding (Medium):** 12px on all sides (square).
+**Icon**
+ 
+| Size | Dimensions | Padding | Corner radius |
+|------|-----------|---------|---------------|
+| `Small` | 24×24px | 12px | 48px |
+| `Medium` | 34×34px | 12px | 48px |
+| `Large` | 48×48px | 12px | 48px |
+ 
+**Link**
+ 
+| Size | Font size | Padding |
+|------|-----------|---------|
+| `Small` | 14px | 0 |
+| `Medium` | 14px | 0 |
+| `Large` | 16px | 0 |
  
 ---
  
-### 4.7 Typography
+### 4.6 Typography
  
-All button labels use `IBM Plex Sans, Regular (400)`. Size varies by the `Size` property — see 3.6 above.
+All button labels use `IBM Plex Sans, Regular (400)`. Size varies by the `Size` property — see 4.5 above.
+ 
+| Size | Text style |
+|------|-----------|
+| `Small` (Pill) | `Archived/12` |
+| `Medium` · `Small` (Link) | `body/14-regular` |
+| `Large` | `body/16-regular` |
  
 ---
  
-### 4.8 Figma
+### 4.7 Figma
  
 | Resource | Node |
 |----------|------|
@@ -415,7 +460,7 @@ All button labels use `IBM Plex Sans, Regular (400)`. Size varies by the `Size` 
  
 ## 5. Button Groups
  
-A pair of toggle-style button components used to present a set of mutually exclusive options. Available in two orientations — Vertical (pill-shaped, with label and icon) and Horizontal (icon-only with label below).
+A pair of toggle-style button components used to present a set of mutually exclusive options. Available in two orientations — Horizontal (pill-shaped, icon and label side by side) and Vertical (circular icon with label below).
  
 ---
  
@@ -423,94 +468,100 @@ A pair of toggle-style button components used to present a set of mutually exclu
  
 | Component | Node | Description |
 |-----------|------|-------------|
-| `Button Group _ Vertical` | `5038:41083` | Pill-shaped button with icon + label, 2 sizes |
-| `Button Group _ Horizontal` | `6268:9263` | Circular icon button with label below |
+| `Button Group _ Horizontal` | `5038:41083` | Pill-shaped button with icon + label side by side, 2 sizes |
+| `Button Group _ Vertical` | `6268:9263` | Circular icon button with label below |
  
 ---
  
-### 5.2 Button Group _ Vertical
+### 5.2 Button Group _ Horizontal
  
 **Properties:**
  
-| Property | Values |
-|----------|--------|
-| `Size` | `Small` · `Large` |
-| `State` | `Default` · `Hover` · `Pressed` · `Selected` · `Disabled` |
+| Property | Type | Values / Default |
+|----------|------|------------------|
+| `Size` | Variant | `Small` · `Large` |
+| `State` | Variant | `Default` · `Hover` · `Pressed` · `Selected` · `Disabled` |
+| `Label` | Text | `Label` |
+| `Icon` | Boolean | `true` — shows / hides the icon |
  
 Total variants: **10**
  
 **States:**
  
-| State | Background | Border | Text / Icon | Notes |
-|-------|-----------|--------|------------|-------|
-| `Default` | None | `#B2BBC7` | `#3A3D46` | Neutral 40 border, Neutral 80 label |
-| `Hover` | Blue 50 @5% | `#004BE0` | `#004BE0` | Blue 60 |
-| `Pressed` | Blue 50 @10% | `#042CC8` | `#042CC8` | Blue 70 |
-| `Selected` | `#006BFF` | — | `#FFFFFF` | Blue 50 fill, white content |
-| `Disabled` | `#FFFFFF` | — | Icon `#D5DBE2` · Label `#929CAB` | Neutral 30 icon, Neutral 50 label |
+| State | Background | Border | Icon | Label |
+|-------|-----------|--------|------|-------|
+| `Default` | White `#FFFFFF` | 1px Neutral 40 `#B2BBC7` | Blue 50 `#006BFF` | Neutral 80 `#3A3D46` |
+| `Hover` | Blue 50 @5% | 1px Blue 60 `#004BE0` | Blue 60 `#004BE0` | Blue 60 `#004BE0` |
+| `Pressed` | Blue 50 @10% | 1px Blue 70 `#042CC8` | Blue 70 `#042CC8` | Blue 70 `#042CC8` |
+| `Selected` | Blue 10 `#E5F2FF` | — | Blue 60 `#004BE0` | Neutral 80 `#3A3D46` |
+| `Disabled` | Neutral 10 `#F3F5F7` | — | Neutral 50 `#929CAB` | Neutral 60 `#717C8E` |
  
 **Sizes:**
  
-| Size | Height | Padding (H) | Font size | Icon size |
-|------|--------|-------------|-----------|-----------|
-| `Small` | 34px | 16px | 14px | 16px |
-| `Large` | 48px | 24px | 16px | 24px |
+| Size | Height | Min. width | Max. width | Padding (H) | Gap (icon ↔ label) | Font size | Icon size |
+|------|--------|------------|------------|-------------|--------------------|-----------|-----------|
+| `Small` | 34px | 55px | 328px | `--size-06` (16px) | `--size-04` (8px) | 14px (`body/14-regular`) | 16px |
+| `Large` | 48px | 80px | 328px | `--size-07` (24px) | `--size-04` (8px) | 16px (`body/16-regular`) | 24px |
  
-Corner radius: **999px** (full pill)
+Width: **Hug** contents, within the min / max above.
+ 
+Corner radius: **Full** (999px, full pill)
  
 ---
  
-### 5.3 Button Group _ Horizontal
+### 5.3 Button Group _ Vertical
  
 **Properties:**
  
-| Property | Values |
-|----------|--------|
-| `State` | `Default` · `Hover` · `Pressed` · `Selected` · `Disabled` |
+| Property | Type | Values / Default |
+|----------|------|------------------|
+| `State` | Variant | `Default` · `Hover` · `Pressed` · `Selected` · `Disabled` |
+| `Label` | Text | `Label` |
  
 Total variants: **5**
  
 **States:**
  
-| State | Icon Container bg | Icon Container border | Icon | Label | Notes |
-|-------|------------------|----------------------|------|-------|-------|
-| `Default` | `#FFFFFF` | `#B2BBC7` | `#006BFF` | `#3A3D46` | Neutral 40 border, Neutral 80 label |
-| `Hover` | `#FFFFFF` + Blue 50 @5% | `#004BE0` | `#004BE0` | `#004BE0` | Blue 60 |
-| `Pressed` | `#FFFFFF` + Blue 50 @10% | `#042CC8` | `#042CC8` | `#004BE0` | Blue 70 |
-| `Selected` | `#006BFF` | — | `#FFFFFF` | `#004BE0` | Blue 50 fill, white icon |
-| `Disabled` | `#FFFFFF` | `#E3E8ED` | `#E3E8ED` | `#929CAB` | Neutral 20 border + icon, Neutral 50 label |
+| State | Icon Container bg | Icon Container border | Icon | Label |
+|-------|------------------|----------------------|------|-------|
+| `Default` | White `#FFFFFF` | 1px Neutral 40 `#B2BBC7` | Blue 50 `#006BFF` | Neutral 80 `#3A3D46` |
+| `Hover` | White + Blue 50 @5% | 1px Blue 60 `#004BE0` | Blue 60 `#004BE0` | Blue 60 `#004BE0` |
+| `Pressed` | White + Blue 50 @10% | 1px Blue 70 `#042CC8` | Blue 70 `#042CC8` | Blue 70 `#042CC8` |
+| `Selected` | Blue 10 `#E5F2FF` | — | Blue 60 `#004BE0` | Neutral 80 `#3A3D46` |
+| `Disabled` | Neutral 10 `#F3F5F7` | — | Neutral 50 `#929CAB` | Neutral 60 `#717C8E` |
  
 **Dimensions:**
  
 | Element | Size |
 |---------|------|
-| Icon Container | 48×48px |
-| Total height (with label) | 72px |
-| Corner radius | 999px |
+| Icon Container | 48×48px, 10px padding, 24px icon |
+| Width | Hug contents · min. 48px · max. 200px |
+| Gap (icon container ↔ label) | `--size-04` (8px) |
+| Total height (with label) | 75px |
+| Corner radius | Full (999px) |
  
-**Typography:** Label uses `label/12-regular` — IBM Plex Sans, Regular (400), 12px.
+**Typography:** Label uses `body/12-regular` — IBM Plex Sans, Regular (400), 12px.
  
 ---
  
 ### 5.4 Layout — Good Practices
  
-**Vertical (Tab bar)**
+**Horizontal (Tab bar)**
  
 | Property | Value |
 |----------|-------|
 | Container padding | `--size-06` (16px) all sides |
 | Gap between items | `--size-05` (12px) |
+| Min. / max. button width | See 5.2 |
  
 - Labels should be short — one word where possible. Long labels break the layout.
-**Horizontal (Button Group Bar)**
+**Vertical (Button Group Bar)**
  
-| Property | With icons | Without icons |
-|----------|-----------|---------------|
-| Container padding | `--size-06` (16px) all sides | `--size-06` (16px) all sides |
-| Gap between items | `--size-05` (12px) | `--size-06` (16px) |
-| Min. button width | 80px | 80px |
-| Max. container width | 328px (mobile) | 328px (mobile) |
-| Min. container width | 480px (desktop) | 480px (desktop) |
+| Property | Value |
+|----------|-------|
+| Container padding | `--size-06` (16px) all sides |
+| Gap between items | `--size-05` (12px) |
+| Min. / max. button width | See 5.3 |
  
 - Buttons use **Fill, no hug** — they stretch equally to fill the container width.
 - Keep labels short — truncate or abbreviate rather than wrapping.
@@ -520,8 +571,8 @@ Total variants: **5**
  
 | Resource | Node |
 |----------|------|
-| `Button Group _ Vertical` | node `5038:41083` |
-| `Button Group _ Horizontal` | node `6268:9263` |
+| `Button Group _ Horizontal` | node `5038:41083` |
+| `Button Group _ Vertical` | node `6268:9263` |
  
 ---
  
