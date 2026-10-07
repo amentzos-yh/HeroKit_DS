@@ -920,6 +920,71 @@ Labels use `body/16-regular` — IBM Plex Sans, Regular (400), 16px.
  
 ---
  
+## 11. Tabs
+ 
+A horizontal navigation control that switches between content sections within the same view. Each tab item is an individual component assembled into a Tab Bar.
+ 
+---
+ 
+### 11.1 Properties
+ 
+| Property | Type | Values / Default |
+|----------|------|------------------|
+| `State` | Variant | `Default` · `Hover` · `Pressed` · `Focused` · `Selected` |
+| `Label` | Text | `Label` |
+ 
+Total variants: **5**
+ 
+---
+ 
+### 11.2 Anatomy
+ 
+Each Tab item is composed of:
+- A **Label** — text that changes colour per state
+- A **bottom border** — on every state; its colour and weight change per state (see 11.3)
+- A **background** — `Selected` only, with rounded top corners
+Tabs are assembled side by side in a **Tab Bar** with no gap between items — spacing is handled by padding only.
+ 
+---
+ 
+### 11.3 States
+ 
+| State | Background | Bottom border | Label |
+|-------|-----------|---------------|-------|
+| `Default` | — | 1px Neutral 40 `#B2BBC7` | Neutral 80 `#3A3D46` |
+| `Hover` | — | 1px Blue 60 `#004BE0` | Blue 60 `#004BE0` |
+| `Pressed` | — | 1px Blue 70 `#042CC8` | Blue 70 `#042CC8` |
+| `Selected` | Blue 10 `#E5F2FF` · top corners `--size-04` (8px) | 2px Blue 50 `#006BFF` | Neutral 80 `#3A3D46` |
+| `Focused` | — | 2px Blue 50 `#006BFF` on all sides (focus ring) | Blue 60 `#004BE0` |
+ 
+> `Focused` is used for both selected and unselected tabs — there is no separate Focused Selected state.
+ 
+---
+ 
+### 11.4 Dimensions & Spacing
+ 
+| Property | Value |
+|----------|-------|
+| Height | 40px |
+| Padding | `--size-04` (8px) V · `--size-06` (16px) H |
+| Gap between tabs | 0px — flush, no gap |
+ 
+---
+ 
+### 11.5 Typography
+ 
+Labels use `body/16-regular` — IBM Plex Sans, Regular (400), 16px.
+ 
+---
+ 
+### 11.6 Figma
+ 
+| Resource | Node |
+|----------|------|
+| Component set | `Tabs` — node `6268:9148` |
+ 
+---
+ 
 ## 12. Toggle
  
 A binary switch control that lets users turn a setting on or off. Used as an immediate-action alternative to a checkbox when the change takes effect without form submission.
@@ -981,67 +1046,6 @@ Each Toggle variant is composed of:
 | Resource | Node |
 |----------|------|
 | Component set | `Toggle` — node `3684:83220` |
- 
----
- 
-## 11. Tabs
- 
-A horizontal navigation control that switches between content sections within the same view. Each tab item is an individual component assembled into a Tab Bar.
- 
----
- 
-### 11.1 Properties
- 
-| Property | Values |
-|----------|--------|
-| `State` | `Default` · `Hover` · `Pressed` · `Focused` · `Selected` |
- 
-Total variants: **5**
- 
----
- 
-### 11.2 Anatomy
- 
-Each Tab item is composed of:
-- A **Label** — text that changes colour per state
-- A **bottom border** — visible only in the `Selected` state, indicating the active tab
-Tabs are assembled side by side in a **Tab Bar** with no gap between items — spacing is handled by padding only.
- 
----
- 
-### 11.3 States
- 
-| State | Label colour | Notes |
-|-------|-------------|-------|
-| `Default` | `#3A3D46` | Neutral 80 |
-| `Hover` | `#004BE0` | Blue 60 |
-| `Pressed` | `#004BE0` | Blue 60 |
-| `Focused` | `#004BE0` | Blue 60 |
-| `Selected` | `#004BE0` | Blue 60 — active tab, bottom border visible |
- 
----
- 
-### 11.4 Dimensions & Spacing
- 
-| Property | Value |
-|----------|-------|
-| Height | 40px |
-| Padding | 8px (V) · 16px (H) |
-| Gap between tabs | 0px — flush, no gap |
- 
----
- 
-### 11.5 Typography
- 
-Labels use `body/16-regular` — IBM Plex Sans, Regular (400), 16px.
- 
----
- 
-### 11.6 Figma
- 
-| Resource | Node |
-|----------|------|
-| Component set | `Tabs` — node `6268:9148` |
  
 ---
  
