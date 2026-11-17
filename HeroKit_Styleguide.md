@@ -1,7 +1,7 @@
 # HeroKit — Styleguide
 
-> **Version:** 1.1
-> **Last updated:** 16 November 2026
+> **Version:** 1.2
+> **Last updated:** 17 November 2026
 
 ---
 
@@ -373,15 +373,20 @@ The size scale can be applied to `margin`, `padding`, and `border-radius` proper
 
 Icons are visual symbols used to represent ideas, objects, or actions. They communicate messages at a glance, afford interactivity, and draw attention to important information.
 
-**Library source:** `🌈 DS — Product` — [Icons frame](https://www.figma.com/design/khiQfKjMEgUuFH3nkfPL3M/%F0%9F%8C%88-DS-%E2%80%94-Product?node-id=3144-11339)
+**Library source:** `🌈 DS . HeroKit` — [Icons frame](https://www.figma.com/design/khiQfKjMEgUuFH3nkfPL3M/%F0%9F%8C%88-DS-.-HeroKit?node-id=3144-11339)
 
 ### 7.1 Properties
 
 | Property | Value |
 |----------|-------|
 | Library | Custom — HeroKit |
-| Size | 24px |
+| Size | 24px (3 exceptions, see note) |
+| Colour | One colour (1 exception, see note) |
 | Format | SVG |
+
+> **Note:** `Icon/Credit Card Sparkles`, `Icon/Mary Sparkles` and `Icon/Tools Sparkles` export larger than 24px (35×32 and 35×33), because the sparkles sit outside the 24px frame.
+
+> **Note:** `Icon/Google Coloured` is the only multi-colour icon. It keeps the four Google brand colours (`#4285F4`, `#34A853`, `#FBBC05`, `#EA4335`) and must not be recoloured.
 
 ### 7.2 Alignment
 
