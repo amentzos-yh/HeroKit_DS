@@ -1,7 +1,7 @@
 # HeroKit — Styleguide
 
-> **Version:** 1.0
-> **Last updated:** 20 April 2026
+> **Version:** 1.1
+> **Last updated:** 16 November 2026
 
 ---
 
@@ -49,9 +49,11 @@ The Logo component in HeroKit has four properties that combine to produce all va
 
 The colour system is built on four palettes — **Neutral**, **Blue** (primary/brand), **Purple** (accent), and **Yellow** (highlight/trial). Each palette uses HSL-based steps where lower numbers are lighter and higher numbers are darker.
 
+> Values follow the Colour Palette frame in the HeroKit Figma file (node `6074:8721`), which is the source of truth.
+
 ---
 
-### 2.1 Neutral — Saturated Shades `H209–238`
+### 2.1 Neutral — Shades `H209–238`
 
 | Step | Hex | H | S | L |
 |------|-----|---|---|---|
@@ -69,7 +71,7 @@ The colour system is built on four palettes — **Neutral**, **Blue** (primary/b
 
 ---
 
-### 2.2 Blue / Primary `H213–240`
+### 2.2 Blue / Primary `H208–240`
 
 | Step | Hex | H | S | L |
 |------|-----|---|---|---|
@@ -113,7 +115,7 @@ The colour system is built on four palettes — **Neutral**, **Blue** (primary/b
 | Step | Hex | H | S | L |
 |------|-----|---|---|---|
 | 10 | `#FEFBF5` | 040 | 082 | 098 |
-| 30 | `#FBEBC2` | 040 | 088 | 087 |
+| 30 | `#FBE8C2` | 040 | 088 | 087 |
 | 40 | `#FFB017` | 040 | 100 | 055 |
 | 50 | `#EF9E00` | 040 | 100 | 047 |
 | 60 | `#DB7900` | 033 | 100 | 043 |
@@ -128,7 +130,7 @@ The colour system is built on four palettes — **Neutral**, **Blue** (primary/b
 | 15 | `#FDEDED` | 000 | 080 | 096 |
 | 20 | `#FAD0CE` | 003 | 081 | 089 |
 | 30 | `#F6A09E` | 001 | 083 | 079 |
-| 40 | `#F27B74` | 002 | 083 | 070 |
+| 40 | `#F27874` | 002 | 083 | 070 |
 | 50 | `#E65651` | 002 | 075 | 061 |
 
 ---
@@ -152,7 +154,7 @@ The colour system is built on four palettes — **Neutral**, **Blue** (primary/b
 | 10 | `#F9FCFD` | 195 | 050 | 098 |
 | 20 | `#D4ECF3` | 194 | 056 | 089 |
 | 30 | `#A9D8E7` | 195 | 056 | 078 |
-| 40 | `#84C3DD` | 194 | 057 | 069 |
+| 40 | `#84C8DD` | 194 | 057 | 069 |
 
 ---
 
@@ -169,24 +171,47 @@ The colour system is built on four palettes — **Neutral**, **Blue** (primary/b
 
 ---
 
-### 2.10 Gradients
+### 2.10 Red `H011`
 
-Four linear gradients used across the product for decorative surfaces, badges, and premium UI elements.
+| Step | Hex | H | S | L |
+|------|-----|---|---|---|
+| 60 Error | `#FF4820` | 011 | 100 | 056 |
 
-| Name | Stops | Direction |
-|------|-------|-----------|
-| Purple | `#2E306B` → `#202383` | Top to bottom |
-| Blue | `#006BFF` → `#00A4C6` | Diagonal (≈10°) |
-| Gold Smooth | `#FFC700` → `#FFF2B2` → `#FFC700` | Diagonal (135°) |
-| Gold Sharp | `#FFD11A` → `#FFF5CC` → `#FFD11A` | Diagonal (135°), tight midpoint |
+> **Note:** Red is to be replaced by Coral at some point.
+
+---
+
+### 2.11 Gradients
+
+Eight linear gradients. Each one is a paint style in the HeroKit Figma file.
+
+| Name | Figma style | Stops | Direction |
+|------|-------------|-------|-----------|
+| Purple | `Gradient/Purple` | `#2E306B` → `#202383` | Top to bottom |
+| Light Blue | `Gradient/Light Blue` | `#E5F2FF` 10% → `#F5FAFF` 100% | Top to bottom |
+| Light Blue Invert | `Gradient/Light Blue Invert` | `#F5FAFF` 0% → `#E5F2FF` 90% | Top to bottom |
+| Gold Smooth | `Gradient/Gold Smooth` | `#FFC700` → `#FFF2B2` → `#FFC700` | Diagonal (225°) |
+| Gold Sharp | `Gradient/Gold Sharp` | `#FFD11A` → `#FFF5CC` → `#FFD11A` | Diagonal (225°), tight midpoint |
+| AI | `Gradient/AI` | `#C5C2FF` → `#B3D7FF` | Depends on the shape (see note) |
+| AI 80% | `Gradient/AI 80%` | Same as AI, 80% opacity | Depends on the shape |
+| AI 50% | `Gradient/AI 50%` | Same as AI, 50% opacity | Depends on the shape |
+
+> **Note:** The Purple gradient is kept for legacy reasons only. Do not use it in new layouts.
+
+> **Note:** Figma stretches the AI gradient with the shape it fills, so the CSS angle changes with the box: −71.77° on a square or circle, −22.16° on the 328×44 AI Input Field, −44.99° on the 328×108 field. The stops stay at 11.81% and 87.61%.
 
 #### CSS
 
 ```css
---gradient-purple:     linear-gradient(180deg, #2E306B 0%, #202383 100%);
---gradient-blue:       linear-gradient(10deg, #006BFF 0%, #00A4C6 100%);
---gradient-gold-smooth: linear-gradient(135deg, #FFC700 23%, #FFF2B2 50%, #FFC700 79%);
---gradient-gold-sharp:  linear-gradient(135deg, #FFD11A 40%, #FFF5CC 50%, #FFD11A 60%);
+--gradient-purple:            linear-gradient(180deg, #2E306B 0%, #202383 100%);
+--gradient-light-blue:        linear-gradient(180deg, #E5F2FF 10%, #F5FAFF 100%);
+--gradient-light-blue-invert: linear-gradient(180deg, #F5FAFF 0%, #E5F2FF 90%);
+--gradient-gold-smooth:       linear-gradient(225deg, #FFC700 23%, #FFF2B2 50%, #FFC700 79%);
+--gradient-gold-sharp:        linear-gradient(225deg, #FFD11A 40%, #FFF5CC 50%, #FFD11A 60%);
+/* AI: angle shown is for a square or circle */
+--gradient-ai:                linear-gradient(-71.77deg, #C5C2FF 11.81%, #B3D7FF 87.61%);
+--gradient-ai-80:             linear-gradient(-71.77deg, rgba(197, 194, 255, .8) 11.81%, rgba(179, 215, 255, .8) 87.61%);
+--gradient-ai-50:             linear-gradient(-71.77deg, rgba(197, 194, 255, .5) 11.81%, rgba(179, 215, 255, .5) 87.61%);
 ```
 
 ---
@@ -239,6 +264,7 @@ Weights:      400 (Regular) · 600 (SemiBold)
 |-------|--------|------|-------------|----------------|
 | `label/10-semibold` | SemiBold (600) | 10px | 160% | 2% |
 | `label/10-regular` | Regular (400) | 10px | 160% | 2% |
+| `label/9-regular` | Regular (400) | 9px | 160% | 3% |
 
 ---
 
@@ -367,9 +393,13 @@ When used next to text, icons should be center-aligned.
 |------|
 | Icon/Add Big |
 | Icon/Add Small |
+| Icon/Angles Left |
+| Icon/Angles Right |
 | Icon/Apple |
 | Icon/Arrow Down |
 | Icon/Arrow Up |
+| Icon/Arrow Up Right Outline |
+| Icon/Arrow Up Right Solid |
 | Icon/Atlas |
 | Icon/Attach |
 | Icon/Badge Outline |
@@ -381,8 +411,8 @@ When used next to text, icons should be center-aligned.
 | Icon/Calendar |
 | Icon/Calendar Meeting |
 | Icon/Camera |
-| Icon/Chat Bubble |
 | Icon/Chat Bubble Outline |
+| Icon/Chat Bubble Solid |
 | Icon/Check Big |
 | Icon/Check Flower |
 | Icon/Check Small |
@@ -390,11 +420,17 @@ When used next to text, icons should be center-aligned.
 | Icon/Chevron Left |
 | Icon/Chevron Right |
 | Icon/Chevron Up |
+| Icon/Circle Add Outline |
+| Icon/Circle Add Solid |
 | Icon/Circle Arrow Down Outline |
 | Icon/Circle Arrow Down Solid |
+| Icon/Circle Arrow Left Outline |
+| Icon/Circle Arrow Left Solid |
 | Icon/Circle Arrow Right Outline |
 | Icon/Circle Arrow Right Solid |
 | Icon/Circle Check Solid |
+| Icon/Circle Chevron Down Outline |
+| Icon/Circle Chevron Down Solid |
 | Icon/Circle Close Outline |
 | Icon/Circle Close Solid |
 | Icon/Circle Pause Outline |
@@ -418,7 +454,8 @@ When used next to text, icons should be center-aligned.
 | Icon/Crown Solid |
 | Icon/Cup |
 | Icon/Currency Banknote Solid |
-| Icon/Currency Coins |
+| Icon/Currency Coins Outline |
+| Icon/Currency Coins Solid |
 | Icon/Currency Dollar Off |
 | Icon/Currency Dollar On |
 | Icon/Currency Euro |
@@ -432,13 +469,17 @@ When used next to text, icons should be center-aligned.
 | Icon/Download |
 | Icon/Edit Outline |
 | Icon/Edit Solid |
+| Icon/Edit Pen Outline |
+| Icon/Edit Pen Solid |
 | Icon/Exclamation |
 | Icon/Exclamation Star Outline |
 | Icon/Exclamation Star Solid |
-| Icon/Exclamation Triangle |
+| Icon/Exclamation Triangle Outline |
+| Icon/Exclamation Triangle Solid |
 | Icon/Eye Outline |
 | Icon/Eye Solid |
-| Icon/Eye Solid Slash |
+| Icon/Eye Slash Outline |
+| Icon/Eye Slash Solid |
 | Icon/Face Happy |
 | Icon/Face Neutral Outline |
 | Icon/Face Neutral Solid |
@@ -456,20 +497,26 @@ When used next to text, icons should be center-aligned.
 | Icon/Flag |
 | Icon/Fullscreen Close |
 | Icon/Fullscreen Open |
+| Icon/GPS |
 | Icon/Google |
 | Icon/Google Coloured |
-| Icon/GPS |
+| Icon/Grid 2 Outline |
+| Icon/Grid 2 Solid |
 | Icon/Guarantee |
 | Icon/Hand Outline |
 | Icon/Hand Solid |
 | Icon/Hand Wave |
+| Icon/Headset Outline |
+| Icon/Headset Solid |
 | Icon/Heart Solid |
 | Icon/Heartbroken |
 | Icon/Hexagon Close |
 | Icon/History |
 | Icon/Hoover |
 | Icon/Hourglass Solid |
-| Icon/House |
+| Icon/House Outline |
+| Icon/House Solid |
+| Icon/House Solid 2 |
 | Icon/Image Outline |
 | Icon/Image Solid |
 | Icon/Info Circle |
@@ -485,6 +532,7 @@ When used next to text, icons should be center-aligned.
 | Icon/Lightning Solid |
 | Icon/Linkedin 1 |
 | Icon/Linkedin 2 |
+| Icon/Logo Heart |
 | Icon/Logout |
 | Icon/Magnifying Glass |
 | Icon/Mail |
@@ -493,6 +541,7 @@ When used next to text, icons should be center-aligned.
 | Icon/Mary Sparkles |
 | Icon/Microphone |
 | Icon/More Horizontal |
+| Icon/Notebook Outline |
 | Icon/Offer |
 | Icon/Party |
 | Icon/Percent |
@@ -507,6 +556,7 @@ When used next to text, icons should be center-aligned.
 | Icon/Pin User |
 | Icon/Pinterest |
 | Icon/Power |
+| Icon/Quote Left Solid |
 | Icon/Radio |
 | Icon/Ranking Star |
 | Icon/Referral Club |
@@ -549,6 +599,8 @@ When used next to text, icons should be center-aligned.
 | Icon/Tools |
 | Icon/Tools Outline |
 | Icon/Tools Sparkles |
+| Icon/Trash Can Outline |
+| Icon/Trash Can Solid |
 | Icon/Trending Down |
 | Icon/Trending Up |
 | Icon/Truck |
@@ -567,5 +619,3 @@ When used next to text, icons should be center-aligned.
 | Icon/Washing Machine |
 | Icon/Watch Later |
 | Icon/YouTube |
-
-
