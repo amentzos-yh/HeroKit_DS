@@ -1,6 +1,6 @@
 # HeroKit — Styleguide
 
-> **Version:** 1.2
+> **Version:** 1.3
 > **Last updated:** 17 November 2026
 
 ---
@@ -402,6 +402,7 @@ When used next to text, icons should be center-aligned.
 | Icon/Angles Right |
 | Icon/Apple |
 | Icon/Arrow Down |
+| Icon/Arrow Turn Down Right Solid |
 | Icon/Arrow Up |
 | Icon/Arrow Up Right Outline |
 | Icon/Arrow Up Right Solid |
