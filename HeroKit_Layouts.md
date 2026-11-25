@@ -1,7 +1,7 @@
 # HeroKit — Layouts
 
-> **Version:** 1.1
-> **Last updated:** 24 November 2026
+> **Version:** 1.2
+> **Last updated:** 25 November 2026
 > **Source:** `🌈 DS . HeroKit` → page `3. Layouts`. Figma is the source of truth when this doc and Figma disagree.
 > **Naming:** colours and text styles use their Figma names. Single components are documented in `HeroKit_Components.md`.
 
@@ -164,7 +164,7 @@ Web footer, one set per breakpoint.
 | `Modal _ Web _ Header` | `7220:36149` | `Kind`: `Default` · `Back Button` · `Back & Title` · `Title` · `Back` (booleans) · `Text label` · 56px high |
 | `Modal _ CTA` | `6875:28582` | `Kind`: `Full width` · `Left` · `Right` · `Center` · `CTAs`: `1` · `2` · `Stroke`: `On` · `Off` |
 | `Modal _ App` | `6876:30927` | `Variation`: `Default (Hug)` · `Fill` · `CTA` (boolean) · `Container Slot` |
-| `Modal _ App _ Header` | `2359:71730` | `Kind`: `Back` · `Close` · `Button Active`: `Off` · `On` · `Button` (boolean) · 59px high |
+| `Modal _ App _ Header` | `2359:71730` | `Kind`: `Close` · `Back` · `Search` · `Search Active` · `Button` (boolean, Close / Back only) · 59px high (Search: 56px) |
 | `Drawer _ Item` | `4493:16471` | `State`: `Default` · `Hover` · `Pressed` · `Stroke`: `On` · `Off` · `Icon` (boolean) · `Label` · 360 × 66px |
 
 ### 6.2 Sizes (Modal _ Web)
@@ -186,8 +186,20 @@ Web footer, one set per breakpoint.
 |------|------|
 | Header (`Modal _ Web _ Header`) | 56px, padding 16px, white, bottom stroke `Shades/30`, `Icon/Close Big` 24px |
 | CTA section (`Modal _ CTA`) | Padding 16px, white, top stroke `Shades/30` (`Stroke=On`). 80px with one Large button. |
-| App header (`Modal _ App _ Header`) | 59px, padding 16px, top corners 16px, bottom stroke `Shades/30`. Optional Small Primary button on the right. |
+| App header (`Modal _ App _ Header`) | Padding 16px, white, top corners 16px, bottom stroke `Shades/30`. See 6.3.1. |
 | Scrim | `#000000` at 50% |
+
+#### 6.3.1 Modal _ App _ Header — Kinds
+
+| Kind | Height | Left | Middle | Right |
+|------|--------|------|--------|-------|
+| `Close` | 59px | `Icon/Close Big` 24px, `Blue/50 (Logo)` | — | Optional Button (Pill, Primary, Small) |
+| `Back` | 59px | Button (Link, Primary, Large) with `Icon/Circle Arrow Left Outline` + label | — | Optional Button (Pill, Primary, Small) |
+| `Search` | 56px | Button (Link, Primary, Large), icon only (`Icon/Circle Arrow Left Outline`) | Placeholder, `Body/16`, `Shades/50`, fills the width | `Icon/Close Big` 24px, `Blue/50 (Logo)` |
+| `Search Active` | 56px | as `Search` | Typed text, `Body/16`, `Shades/80` | as `Search` |
+
+- `Close` / `Back`: left and right items are pushed to the edges (space between). The `Button` boolean shows / hides the right button.
+- `Search` / `Search Active`: gap 24px, no right button.
 
 ### 6.4 Behaviour
 

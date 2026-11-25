@@ -1,7 +1,7 @@
 # HeroKit — Components
 
-> **Version:** 1.6
-> **Last updated:** 24 November 2026
+> **Version:** 1.7
+> **Last updated:** 25 November 2026
 > **Source:** `🌈 DS . HeroKit` → page `✨ Updated Components`. Figma is the source of truth when this doc and Figma disagree.
 > **Naming:** colours and text styles use their Figma names (`Shades/80`, `Body/14 Semibold`). Hex values are given for reference.
 > Layouts (Header, Footer, Modals, Loaders, Nav bars) are documented in `HeroKit_Layouts.md`.
@@ -1057,9 +1057,9 @@ Total variants: **4**
 | State | Background | Border | Label |
 |-------|-----------|--------|-------|
 | `Default` | `Shades/0 (White)` | 1px `Blue/30` | `Shades/80` |
-| `Hover` | `Blue/10` | — | `Shades/80` |
+| `Hover` | `Blue/10` | — | `Blue/60` |
 | `Pressed` | `Blue/30` | — | `Blue/70` |
-| `Selected` | `Blue/20` | — | `Blue/70` |
+| `Selected` | `Blue/20` | — | `Shades/80` |
 
 ---
 
