@@ -1,7 +1,7 @@
 # HeroKit — Components
 
-> **Version:** 1.7
-> **Last updated:** 25 November 2026
+> **Version:** 1.8
+> **Last updated:** 26 November 2026
 > **Source:** `🌈 DS . HeroKit` → page `✨ Updated Components`. Figma is the source of truth when this doc and Figma disagree.
 > **Naming:** colours and text styles use their Figma names (`Shades/80`, `Body/14 Semibold`). Hex values are given for reference.
 > Layouts (Header, Footer, Modals, Loaders, Nav bars) are documented in `HeroKit_Layouts.md`.
@@ -840,7 +840,8 @@ Corner radius: Full (999px).
 
 | Rule | Value |
 |------|-------|
-| Gap between items | `Sizes/05` (12px) |
+| Gap between items — Horizontal | `Sizes/04` (8px) |
+| Gap between items — Vertical | 6px in Figma (not yet confirmed) |
 | Horizontal, `Width=Hug` | Items hug their label (min 55px Medium / 80px Large, no max width). On mobile the row scrolls sideways; it never wraps. |
 | Horizontal, `Width=Fill` | The row takes the full width; items share it equally (e.g. page-level tabs). |
 | Vertical | Items share the width equally. Icon container stretches to max 70px. One size. |
